@@ -1,0 +1,44 @@
+---
+import IsolashesLogo from "@icons/brandIcons/IsolashesIcon";
+import { footerInfo, footerNavigation, footerSections } from "./_footer.info";
+import FooterSocialRender from "./components/footerSocial/FooterSocial";
+import FooterLocationsRender from "./components/footerLocations/FooterLocations";
+import FooterSectionsRender from "./components/footerSections/FooterSectionsRender";
+import NewsLetter from "./components/newsLetter/NewsLetter.astro";
+import { Link } from "@nextui-org/react";
+---
+
+<footer class="flex flex-col w-full">
+  <div class="max-w-full px-6 pt-20 pb-8 mx-auto lg:px-8">
+    <div class="xl:grid xl:grid-cols-3 xl:gap-8">
+      <div class="space-y-8 md:pr-8">
+        <div class="flex items-center justify-start">
+          <IsolashesLogo />
+        </div>
+        <p class="text-md text-default-500">{footerInfo.title}</p>
+        <FooterSocialRender socials={footerNavigation.social} />
+      </div>
+      <div class="grid grid-cols-2 gap-8 mt-16 xl:col-span-2 xl:mt-0">
+        <div>
+          <FooterLocationsRender
+            title={footerInfo.sectionsTitles.locations}
+            items={footerNavigation.locations}
+          />
+        </div>
+        <FooterSectionsRender sections={footerSections} />
+      </div>
+    </div>
+
+    <div class="flex flex-wrap justify-center gap-2 pt-8">
+      <p class="text-small text-default-400">
+        {footerInfo.rights}
+        <Link href="https://vladimircuriel.me">
+          <span class="transition-transform hover:scale-105"
+            >{footerInfo.author}</span
+          >
+        </Link>
+      </p>
+    </div>
+    <!-- <NewsLetter /> -->
+  </div>
+</footer>
