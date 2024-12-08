@@ -7,9 +7,5 @@ import { products } from "../../_products.info";
 <section
   class="flex flex-wrap items-center justify-center mt-8 lg:justify-between gap-x-8 gap-y-16"
 >
-  {
-    products?.map((product: Product, index: any) => (
-      <ProductCard product={product} />
-    ))
-  }
+  {products?.map((product: Product) => <ProductCard product={product} />)}
 </section>

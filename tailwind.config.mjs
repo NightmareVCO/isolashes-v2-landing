@@ -14,8 +14,7 @@ export default {
       backgroundImage: {
         hero: "url('/hero.webp')",
         appointment: "url('/appointment.webp')",
-        login: "url('/full_about1.png')",
-        simpleHero: "url('/simple-hero-image.webp')",
+        header: "url('/header.webp')",
       },
       fontFamily: {
         sunydale: ["Sunydale"],
