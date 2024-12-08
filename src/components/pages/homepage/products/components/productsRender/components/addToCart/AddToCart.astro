@@ -1,0 +1,18 @@
+---
+import addToCartInfo from "./_addToCart.info";
+import { Button, Link } from "@nextui-org/react";
+---
+
+<Button
+  color="primary"
+  size="md"
+  radius="full"
+  variant="ghost"
+  className="w-max"
+>
+  <Link href="https://tienda.isolashes.com/productos">
+    <span class="text-medium">
+      {addToCartInfo.add}
+    </span>
+  </Link>
+</Button>
