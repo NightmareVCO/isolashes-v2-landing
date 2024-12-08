@@ -1,0 +1,72 @@
+---
+import { Image } from "astro:assets";
+import aboutInfo from "./_about.info";
+import Line from "@src/components/icons/uiIcons/Line";
+import StyledSideHeading from "@components/ui/headings/StyledSideHeading";
+import ParallaxBackground from "@components/ui/parallax/ParallaxBackground";
+import StyledButton from "@components/ui/buttons/StyledButton";
+---
+
+<section
+  class="flex flex-col h-[500px] max-w-full mx-auto lg:flex-row gap-x-12"
+>
+  <div class="relative flex-1 hidden lg:block">
+    <ParallaxBackground client:load />
+    <div class="absolute ml-52 mt-32 z-10 min-h-[500px]">
+      <Image
+        src={aboutInfo.image1.src}
+        alt={aboutInfo.image1.alt}
+        height={507}
+        width={390}
+      />
+    </div>
+    <div class="absolute bottom-24">
+      <Image
+        src={aboutInfo.image2.src}
+        alt={aboutInfo.image2.alt}
+        height={507}
+        width={390}
+      />
+    </div>
+  </div>
+
+  <div
+    class="flex flex-col mx-6 items-center lg:items-start justify-center lg:flex-1 lg:w-[1200px] gap-y-5"
+  >
+    <div class="flex flex-row items-center justify-center lg:hidden gap-x-6">
+      <Image
+        src={aboutInfo.image1.src}
+        alt={aboutInfo.image1.alt}
+        height={507}
+        width={390}
+        class="pb-4"
+      />
+      <Image
+        src={aboutInfo.image2.src}
+        alt={aboutInfo.image2.alt}
+        height={455}
+        width={300}
+        class="hidden md:block"
+      />
+    </div>
+
+    <StyledSideHeading
+      normalText={aboutInfo.normalText}
+      styledText={aboutInfo.styledText}
+    />
+
+    <h2 class="text-5xl font-medium text-center lg:text-start text-pretty">
+      {aboutInfo.subtitle}
+    </h2>
+    <Line className="h-2.5" />
+
+    <p
+      class="w-full my-2 text-lg lg:text-xl text-default-600 block min-w-[300px] md:max-w-[600px]text-pretty"
+    >
+      {aboutInfo.description}
+    </p>
+    <StyledButton className="text-white" href={aboutInfo.buttonHref}>
+      {aboutInfo.buttonText}
+    </StyledButton>
+  </div>
+</section>
