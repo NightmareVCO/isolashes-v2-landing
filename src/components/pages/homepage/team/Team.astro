@@ -1,0 +1,14 @@
+---
+import StyledHeading from "@components/ui/headings/StyledHeading";
+import { teamInfo, team } from "./_team.info";
+import TeamRender from "./components/teamRender/TeamRender.astro";
+---
+
+<section class="flex flex-col items-center justify-center gap-y-9">
+  <StyledHeading
+    normalText={teamInfo.normalText}
+    styledText={teamInfo.styledText}
+  />
+
+  <TeamRender team={team} />
+</section>

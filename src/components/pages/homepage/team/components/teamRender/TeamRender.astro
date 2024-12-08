@@ -1,0 +1,37 @@
+---
+import { Image } from "astro:assets";
+import type { Team, TeamMember } from "../../_team.info";
+
+interface Props {
+  team: Team;
+}
+
+const { team } = Astro.props;
+---
+
+<div
+  class="flex flex-col items-center justify-center w-full p-10 lg:flex-row gap-14 bg-grayBackground"
+>
+  {
+    team.map((person: TeamMember) => (
+      <div class="flex flex-col items-center justify-center p-8 min-w-[350px] w-[380px] lg:w-[420px] min-h-[500px] bg-white shadow-lg gap-y-6">
+        <Image
+          src={person.imageSrc}
+          alt="personal"
+          width={235}
+          height={255}
+          class="transition hover:scale-95"
+        />
+        <div class="flex flex-col items-center justify-center">
+          <h3 class="text-2xl">{person.name}</h3>
+          <p class="text-pretty text-secondary">{person.role}</p>
+        </div>
+        <div class="flex items-center justify-center">
+          <p class="text-xl font-light text-center text-pretty max-w-80">
+            {person.description}
+          </p>
+        </div>
+      </div>
+    ))
+  }
+</div>
