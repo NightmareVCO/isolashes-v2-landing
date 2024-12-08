@@ -1,22 +1,50 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
+---
+import Navbar from "@components/navigation/navbar/Navbar";
+import Footer from "@components/navigation/footer/Footer.astro";
+import "@fontsource-variable/league-spartan";
+import "@fontsource/style-script";
+---
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+<!doctype html>
+<html lang="en" class="font-sans light scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/ico" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+    <meta
+      name="description"
+      content="Somos una empresa dedicada al servicio de las extensiones de pestañas. Ofrecemos una amplia variedad de productos para la aplicación de pestañas. Contamos con una academia de aplicación de pestañas y micropigmentación de cejar, labios, depilación de cejas, hidratación de labios. Estamos ubicados en Santiago, República Dominicana. Salón de Pestañas. Salón de Belleza."
+    />
+    <title>Isolashes | Salón de Pestañas, Cejas y Labios</title>
+  </head>
+
+  <body class="min-h-screen antialiased bg-background font-spartan">
+    <div class="relative flex flex-col min-h-screen">
+      <div class="flex-grow">
+        <Navbar client:load />
+        <main>
+          <slot />
+        </main>
+        <div class="w-full">
+          <Footer />
+        </div>
+      </div>
+    </div>
+
+    <style>
+      :root {
+        --font-spartan: "League Spartan Variable", sans-serif;
+        --font-cursive: "Style Script", cursive;
+      }
+
+      @font-face {
+        font-family: "Sunydale";
+        src: url("/public/fonts/Sunydale.woff2") format("woff2");
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+    </style>
+  </body>
+</html>
