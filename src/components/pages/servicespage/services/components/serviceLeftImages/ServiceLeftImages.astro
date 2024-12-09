@@ -1,0 +1,44 @@
+---
+import { homePageImages } from '@config/images';
+import ParallaxImages from '@components/ui/parallax/ParallaxImages.astro';
+import { Image } from 'astro:assets';
+
+interface Props {
+  index: number;
+  category: string;
+  servicesPageImages: any;
+}
+
+const { index, category, servicesPageImages } = Astro.props;
+---
+
+{index % 2 !== 0 ? (
+  <div class:list={["relative flex-1 hidden lg:block", index % 2 !== 0 ? "ml-20" : ""]}>
+    <ParallaxImages sceneClass={`.scene${index}`}>
+      <div class:list={["absolute min-h-[500px]", index % 2 !== 0 ? "ml-52 z-10" : ""]}>
+        <Image
+          src={homePageImages.about1}
+          alt={category}
+          height={490}
+          width={370}
+        />
+      </div>
+      <div class:list={["absolute", index % 2 !== 0 ? "z-20 top-52" : "z-10 ml-52 top-52"]}>
+        <Image
+          src={homePageImages.about2}
+          alt={category}
+          height={300}
+          width={300}
+        />
+      </div>
+    </ParallaxImage>
+    <div class:list={["absolute", index % 2 !== 0 ? "-left-36" : "-right-16 scale-x-[-1]"]}>
+      <Image
+        src={servicesPageImages.decoration}
+        alt="Decorative image"
+        height={341}
+        width={496}
+      />
+    </div>
+  </div>
+) : null}

@@ -1,0 +1,36 @@
+---
+import ServiceContent from "./components/serviceContent/ServiceContent.astro";
+import ServiceLeftImages from "./components/serviceLeftImages/ServiceLeftImages.astro";
+import ServiceRightImages from "./components/serviceRightImages/ServiceRightImages.astro";
+import { servicesPageImages } from "@config/images";
+import type { ServiceCategory } from "./_servicesCategory.info";
+
+interface Props {
+  servicesInfo: ServiceCategory;
+}
+
+const { servicesInfo } = Astro.props;
+---
+
+<article
+  class="flex flex-col max-w-full lg:min-h-[530px] mx-auto min-h-fit lg:flex-row gap-x-12"
+>
+  <ServiceLeftImages
+    index={servicesInfo.index}
+    category={servicesInfo.category}
+    servicesPageImages={servicesPageImages}
+  />
+
+  <ServiceContent
+    index={servicesInfo.index}
+    category={servicesInfo.category}
+    description={servicesInfo.description}
+    services={servicesInfo.services}
+  />
+
+  <ServiceRightImages
+    index={servicesInfo.index}
+    category={servicesInfo.category}
+    servicesPageImages={servicesPageImages}
+  />
+</article>

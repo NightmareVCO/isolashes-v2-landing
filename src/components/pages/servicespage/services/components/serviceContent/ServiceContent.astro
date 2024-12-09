@@ -1,0 +1,48 @@
+---
+import { Image } from 'astro:assets';
+import ServiceContentRender from './components/serviceContentRender/ServiceContentRender.astro';
+import { homePageImages } from '@src/config/images';
+
+interface Props {
+  index: number;
+  category: string;
+  description: string;
+  services: Array<{ name: string; price: number }>;
+}
+
+const { index, category, description, services } = Astro.props;
+---
+
+<div class:list={[
+  "flex flex-col mx-6 items-center justify-center gap-y-5",
+  index % 2 === 0 ? "lg:items-end lg:justify-end" : "lg:items-start lg:justify-start",
+  "lg:flex-1 lg:w-[1200px]",
+]}>
+  <div class="flex items-center justify-center lg:hidden">
+    <Image
+      src={homePageImages.about2}
+      alt={category}
+      height={300}
+      width={300}
+    />
+  </div>
+
+  <p class="text-4xl font-semibold lg:text-5xl text-primary">
+    {`0${index}. `}
+  </p>
+  <h2 class="text-5xl font-medium text-center leading-[48px]">
+    {category}
+  </h2>
+
+  <p class:list={[
+    "w-full my-2 text-lg lg:text-xl text-default-500 block min-w-[300px] md:max-w-[600px] text-pretty",
+    "text-center",
+    index % 2 === 0 ? "lg:text-end" : "lg:text-start",
+  ]}>
+    {description}
+    {description}{" "}
+    {description}
+  </p>
+
+  <ServiceContentRender services={services} index={index}/>
+</div>

@@ -1,0 +1,12 @@
+---
+import servicesInfo from "./_servicesCategory.info";
+import ServiceCategoryCard from "./ServiceCategoryCard.astro";
+---
+
+<section class="flex flex-col mb-20 lg:gap-y-40 gap-y-20">
+  {
+    servicesInfo?.map((servicesInCategory) => (
+      <ServiceCategoryCard servicesInfo={servicesInCategory} />
+    ))
+  }
+</section>

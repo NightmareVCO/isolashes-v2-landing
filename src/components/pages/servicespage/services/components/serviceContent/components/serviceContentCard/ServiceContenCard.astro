@@ -1,0 +1,35 @@
+---
+import CheckCircleIcon from "@icons/uiIcons/CheckCircleIcon.astro";
+
+interface Props {
+  index: number;
+  name: string;
+}
+
+const { index, name } = Astro.props;
+---
+
+<li
+  class:list={[
+    "flex items-center gap-x-4",
+    index % 2 === 0 ? "justify-end" : "justify-start",
+  ]}
+>
+  {
+    index % 2 === 0 ? (
+      <>
+        <span class="mt-1 text-xl text-pretty text-default-500">
+          {name}
+        </span>
+        <CheckCircleIcon />
+      </>
+    ) : (
+      <>
+        <CheckCircleIcon />
+        <span class="mt-1 text-xl text-pretty text-default-500">
+          {name}
+        </span>
+      </>
+    )
+  }
+</li>
