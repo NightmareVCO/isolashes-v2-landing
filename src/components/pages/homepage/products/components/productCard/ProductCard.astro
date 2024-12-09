@@ -9,8 +9,6 @@ interface Props {
 }
 
 const { product } = Astro.props;
-
-console.log(product);
 ---
 
 <div
@@ -26,14 +24,14 @@ console.log(product);
         alt={product.name}
         width={500}
         height={270}
-        class="absolute z-10 object-cover transition-opacity duration-500 rounded-none hover:opacity-0"
+        class="absolute z-10 object-cover transition-opacity duration-500 rounded-none hover:opacity-0 max-h-[270px]"
       />
       <Image
         src={product.images[1].src}
         alt={product.name}
         width={500}
         height={270}
-        class="absolute object-cover rounded-none"
+        class="absolute object-cover rounded-none max-h-[270px]"
       />
     </div>
     <div class="flex flex-col justify-start w-full lg:flex-row">
