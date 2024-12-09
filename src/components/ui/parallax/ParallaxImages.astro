@@ -1,0 +1,41 @@
+---
+interface Props {
+  sceneClass: string;
+}
+
+const { sceneClass } = Astro.props;
+const sceneValue = sceneClass.replace(/^\./, "");
+console.log(sceneValue);
+---
+
+<input type="hidden" value={sceneValue} class="sceneValue" />
+<div class={`relative z-20 hidden ${sceneValue} lg:block`}>
+  <div data-depth="0.4">
+    <slot />
+  </div>
+</div>
+
+<script>
+  import Parallax from "parallax-js";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const sceneValues = document.querySelectorAll(
+      ".sceneValue",
+    ) as NodeListOf<HTMLInputElement>;
+
+    sceneValues.forEach((sceneValueInput) => {
+      const sceneClass = sceneValueInput.value;
+      const scene = document.querySelector(`.${sceneClass}`) as HTMLElement;
+
+      if (scene) {
+        new Parallax(scene, {
+          relativeInput: true,
+          limitX: 50,
+          limitY: 100,
+          scalarX: 2,
+          scalarY: 6,
+        });
+      }
+    });
+  });
+</script>

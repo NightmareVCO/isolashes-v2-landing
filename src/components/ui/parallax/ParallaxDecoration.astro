@@ -1,0 +1,30 @@
+---
+import DecorationRectangle from "./decorations/DecorationRectangle.astro";
+import DecorationFigure from "./decorations/DecorationFigure.astro";
+---
+
+<div class="relative hidden scene lg:block">
+  <div data-depth="0.4">
+    <DecorationRectangle />
+  </div>
+  <div data-depth="0.4">
+    <DecorationFigure />
+  </div>
+</div>
+
+<script>
+  import Parallax from "parallax-js";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const scene = document.querySelector(".scene") as HTMLElement;
+    if (scene) {
+      new Parallax(scene, {
+        relativeInput: true,
+        limitX: 50,
+        limitY: 100,
+        scalarX: 2,
+        scalarY: 6,
+      });
+    }
+  });
+</script>
