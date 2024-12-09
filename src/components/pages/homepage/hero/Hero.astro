@@ -1,5 +1,5 @@
 ---
-import StyledButton from "@components/ui/buttons/StyledButton";
+import StyledButton from "@components/ui/buttons/StyledButton.astro";
 import { heroInfo } from "./_hero.info";
 ---
 
@@ -27,11 +27,7 @@ import { heroInfo } from "./_hero.info";
       <div
         class="flex items-center justify-center w-full lg:items-start lg:justify-center"
       >
-        <StyledButton
-          className="text-white"
-          href={heroInfo.buttonHref}
-          client:load
-        >
+        <StyledButton className="text-white" href={heroInfo.buttonHref}>
           {heroInfo.buttonText}
         </StyledButton>
       </div>
