@@ -1,7 +1,4 @@
-import SearchIcon from "@src/components/icons/uiIcons/SearchIcon";
-import IsolashesLogo from "@src/components/icons/brandIcons/IsolashesIcon";
 import { AnimatePresence, motion } from "framer-motion";
-
 import {
   Link,
   Navbar as NextUINavbar,
@@ -16,8 +13,11 @@ import {
 
 import { useNavbar } from "./_useNavbar";
 import { navbarElements } from "./_navbar.config";
+
 import BagIcon from "@src/components/icons/uiIcons/BagIcon";
-import Avatar from "@src/components/navigation/navbar/components/avatar/Avatar";
+import SearchIcon from "@src/components/icons/uiIcons/SearchIcon";
+import IsolashesLogo from "@src/components/icons/brandIcons/IsolashesIcon";
+import Avatar from "./components/avatar/Avatar";
 
 export default function Navbar() {
   const {
@@ -106,7 +106,7 @@ export default function Navbar() {
                     placeholder="Buscar un producto..."
                     radius="none"
                     size="sm"
-                    endContent={<SearchIcon size={25} />}
+                    endContent={<SearchIcon />}
                     type="search"
                     aria-label="Buscar un producto..."
                   />
@@ -118,7 +118,7 @@ export default function Navbar() {
 
         <NavbarItem className="hidden lg:flex">
           <button onClick={handleSearchVisibility}>
-            <SearchIcon size={25} />
+            <SearchIcon />
           </button>
         </NavbarItem>
 

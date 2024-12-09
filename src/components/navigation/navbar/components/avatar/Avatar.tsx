@@ -35,7 +35,6 @@ export default function Avatar() {
             key={item.key}
             href={item.href}
             className={item.color ? `text-${item.color}` : undefined}
-            endContent={item.endContent}
           >
             {item.label}
           </DropdownItem>

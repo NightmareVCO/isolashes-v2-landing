@@ -1,4 +1,3 @@
-import ArrowRightUpIcon from "@src/components/icons/uiIcons/ArrowRightUpIcon";
 export type AvatarMenuItems = typeof avatarMenuItems;
 export type AvatarMenuItem = (typeof avatarMenuItems)[number];
 
@@ -27,8 +26,7 @@ export const avatarMenuItems = [
     key: "cursos",
     href: "https://academia.isolashes.com/usuario/cursos",
     label: "Cursos",
-    color: "warning",
-    endContent: <ArrowRightUpIcon />,
+    color: "primary",
   },
 ];
 
