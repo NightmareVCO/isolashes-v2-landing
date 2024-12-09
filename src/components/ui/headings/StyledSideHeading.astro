@@ -1,0 +1,14 @@
+---
+export interface StyledSideHeadingProperties {
+  className?: string;
+  normalText: string;
+  styledText: string;
+}
+
+const { className, normalText, styledText } = Astro.props;
+---
+
+<h3 class={`text-xl tracking-widest text-center ${className}`}>
+  {normalText}{" "}
+  <span class="tracking-widest text-secondary">{styledText}</span>
+</h3>

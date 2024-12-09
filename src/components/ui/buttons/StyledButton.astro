@@ -1,0 +1,25 @@
+---
+import { Button, Link } from "@nextui-org/react";
+
+interface Props {
+  children: React.ReactNode;
+  className?: string;
+  isDisabled?: boolean;
+  href: string;
+}
+
+const { children, className, isDisabled, href } = Astro.props;
+---
+
+<Link href={href} target="_blank" rel="noopener" client:visible>
+  <Button
+    radius="none"
+    color="primary"
+    size="lg"
+    className=" min-w-52 min-h-12"
+    isDisabled={isDisabled}
+    client:visible
+  >
+    <p class={`text-xl text-white ${className}`}><slot /></p>
+  </Button>
+</Link>

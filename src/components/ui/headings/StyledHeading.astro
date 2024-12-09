@@ -1,0 +1,19 @@
+---
+import LineIcon from "@icons/uiIcons/Line.astro";
+
+interface Props {
+  className?: string;
+  normalText: string;
+  styledText: string;
+}
+
+const { className, normalText, styledText } = Astro.props;
+---
+
+<div class="flex flex-col items-center justify-center">
+  <h3 class={`text-center text-5xl font-medium  ${className}`}>
+    {normalText}
+    {styledText}
+  </h3>
+  <LineIcon className="h-3 mt-3" />
+</div>
