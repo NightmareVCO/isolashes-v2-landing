@@ -1,7 +1,7 @@
+import { useEffect } from "react";
 import Decoration1 from "./decorations/Decoration1";
 import Decoration2 from "./decorations/Decoration2";
 import Parallax from "parallax-js";
-import { useEffect } from "react";
 
 export default function ParallaxBackground() {
   useEffect(() => {
@@ -14,13 +14,14 @@ export default function ParallaxBackground() {
       scalarY: 6,
     });
   }, []);
+
   return (
     <div className="relative hidden scene lg:block">
       <div data-depth="0.4">
-        <Decoration1 className="size-[315px] opacity-50 mt-52 absolute left-[-65px]" />
+        <Decoration1 />
       </div>
       <div data-depth="0.4">
-        <Decoration2 className="size-[415px] opacity-50 pb-14 absolute left-[235px]" />
+        <Decoration2 />
       </div>
     </div>
   );
