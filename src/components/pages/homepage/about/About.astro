@@ -3,15 +3,15 @@ import { Image } from "astro:assets";
 import aboutInfo from "./_about.info";
 import Line from "@icons/uiIcons/Line.astro";
 import StyledSideHeading from "@components/ui/headings/StyledSideHeading.astro";
-import ParallaxBackground from "@src/components/ui/parallax/ParallaxBackground";
 import StyledButton from "@components/ui/buttons/StyledButton.astro";
+import ParallaxDecoration from "@components/ui/parallax/ParallaxDecoration.astro";
 ---
 
 <section
   class="flex flex-col h-[500px] max-w-full mx-auto lg:flex-row gap-x-12"
 >
   <div class="relative flex-1 hidden lg:block">
-    <ParallaxBackground client:visible/>
+    <ParallaxDecoration />
     <div class="absolute ml-52 mt-32 z-10 min-h-[500px]">
       <Image
         src={aboutInfo.image1.src}
