@@ -1,6 +1,6 @@
-import FacebookIcon from "@icons/socialIcons/FacebookIcon";
-import InstagramIcon from "@icons/socialIcons/InstagramIcon";
-import TwitterIcon from "@icons/socialIcons/TwitterIcon";
+import FacebookIcon from "@src/components/icons/socialIcons/FacebookIcon";
+import InstagramIcon from "@src/components/icons/socialIcons/InstagramIcon";
+import TwitterIcon from "@src/components/icons/socialIcons/TwitterIcon";
 import type { FC, SVGProps } from "react";
 
 export type FooterNavigation = typeof footerNavigation;
